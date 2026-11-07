@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%-5level %msg%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <!--
+          Suppress "Vm N destroyed on Host M" INFO messages emitted by
+          DatacenterSimple.processVmDestroy() at simulation end when terminateAt()
+          fires while cloudlets are still running. This is the intended behaviour
+          after the cloudletLength fix (v6+): cloudlets are kept alive past
+          terminateAt so the event queue stays populated. It is a teardown log,
+          not a defect. Raise to INFO to re-enable these messages.
+        -->
+        <Logger name="org.cloudsimplus.datacenters.DatacenterSimple" level="WARN" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Root level="INFO">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>

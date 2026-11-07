@@ -1,0 +1,45 @@
+# Local data and model artifacts
+/patch_models/
+*.pt
+*.pth
+*.pkl
+*.joblib
+*.csv
+*.parquet
+
+# Local runtime outputs and uploaded data
+runs/
+uploads/
+**/.env*
+!**/.env.example
+/PatchTST-VM-Consolidation/results*/
+/PatchTST-VM-Consolidation/results_v*/
+/cell3_dump.txt
+/PatchTST-VM-Consolidation/cp.txt
+/PatchXProCon-Dashboard/frontend/vite.config.js
+/PatchXProCon-Dashboard/frontend/vite.config.d.ts
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Node
+node_modules/
+dist/
+frontend/dist/
+*.tsbuildinfo
+
+# Java / Maven
+**/target/
+
+# IDE, OS, and logs
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+*.log
+hs_err_pid*
