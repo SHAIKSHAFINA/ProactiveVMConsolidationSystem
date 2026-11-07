@@ -8,6 +8,13 @@
   <img src="https://img.shields.io/badge/Java-CloudSim-orange?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java and CloudSim" />
 </p>
 
+<img width="900" height="526" alt="image" src="https://github.com/user-attachments/assets/dc809c44-ab3d-4e4b-abe8-ff6ef2d9356f" />
+<img width="900" height="543" alt="image" src="https://github.com/user-attachments/assets/07aa1694-ceb4-431a-8373-d82ff17d3034" />
+<img width="900" height="536" alt="image" src="https://github.com/user-attachments/assets/48f81b8a-75b1-47b6-b4d9-d66c8623655c" />
+
+
+
+
 <p align="center">
   <strong>A dataset-driven research dashboard for forecasting VM resource demand, estimating overload risk, and comparing consolidation policies in CloudSim Plus.</strong>
   <br />
@@ -105,29 +112,6 @@ Run outputs can include policy summaries, host utilization snapshots, VM placeme
 
 The backend’s configuration check requires Python packages from `PatchXProCon-Dashboard/backend/requirements.txt`; the frontend has a production build command, `npm run build`.
 
-## Artifacts and data policy
 
-Model binaries, private/local data, uploaded files, and generated run directories are intentionally excluded from Git. To enable raw inference, place authorized files in `patch_models/` at the workspace root:
 
-```text
-patch_models/
-├── PatchTST_best.pt
-├── train_only_scaler.pkl
-└── adaptive_logistic_regression.joblib
-```
 
-Do not commit model weights, datasets, `.env` files, or run outputs unless you have permission and a clear reason to distribute them. The backend loads the saved scaler; it does not refit it on an uploaded dataset.
-
-## Limitations and research caveats
-
-- Host CPU/RAM capacities are simulation assumptions, not measured Bitbrains host properties.
-- Disk I/O is forecast/display data only; disk placement constraints are **NOT_MODELED**.
-- Overload intervals are simulator proxies, not measured SLA violations; SLA violations are not measured.
-- Energy is an approximate simulation estimate, not metered facility energy. The results do not by themselves establish energy savings.
-- The notebook’s classifier metrics are not verified for the deployed 48-feature classifier artifact because of the 57-vs-48 feature mismatch.
-
-## Documentation
-
-- [Dashboard README and API/workflow details](PatchXProCon-Dashboard/README.md)
-- [Technical deep dive, evaluation evidence, and limitations](PatchXProCon-Dashboard/PatchXProCon_Technical_Deep_Dive.md)
-- [Training notebook and saved experiment outputs](model_patch.ipynb)
